@@ -58,6 +58,5 @@ def store_rfid_data():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-if __name__ == '__main__':
-    init_db()
-    app.run(host='0.0.0.0', port=5000)
+# Initialize database when the application starts
+init_db()

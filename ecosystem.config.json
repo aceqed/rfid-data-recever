@@ -1,0 +1,15 @@
+{
+  "apps": [{
+    "name": "rfid-api",
+    "script": "python",
+    "args": "app.py",
+    "interpreter": "python",
+    "instances": 1,
+    "autorestart": true,
+    "watch": false,
+    "time": true,
+    "env": {
+      "NODE_ENV": "production"
+    }
+  }]
+}
