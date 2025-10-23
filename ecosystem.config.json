@@ -1,18 +1,15 @@
 {
   "apps": [{
     "name": "rfid-api",
-    "script": ".venv/Scripts/gunicorn",
-    "args": "main:app -c gunicorn.conf.py",
-    "instances": 1,
-    "autorestart": true,
-    "watch": false,
-    "time": true,
-    "error_file": "logs/error.log",
-    "out_file": "logs/output.log",
-    "log_date_format": "YYYY-MM-DD HH:mm:ss",
+    "script": ".venv/bin/gunicorn",
+    "args": "wsgi:app --bind 0.0.0.0:5000 --workers 4",
+    "interpreter": null,
+    "cwd": "./",
     "env": {
-      "NODE_ENV": "production",
       "PYTHONUNBUFFERED": "1"
-    }
+    },
+    "error_file": "logs/error.log",
+    "out_file": "logs/access.log",
+    "log_date_format": "YYYY-MM-DD HH:mm:ss"
   }]
 }
