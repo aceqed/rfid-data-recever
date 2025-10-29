@@ -4,11 +4,14 @@ import json
 from datetime import datetime
 import os
 from dotenv import load_dotenv
+from flask_cors import CORS
 
 # Load environment variables from .env file
 load_dotenv()
 
 app = Flask(__name__)
+# Enable CORS for all routes
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Get API key from environment variable
 API_KEY = os.getenv('API_KEY')
